@@ -8,7 +8,7 @@ class Home extends CI_Controller {
 
 		$config['base_url'] = base_url('index.php/frontend/home/page/');
 		$config['total_rows'] = $this->db->count_all('news');
-		$config['per_page'] = 3; 
+		$config['per_page'] = 2; 
     	$config['use_page_numbers'] = TRUE;
 		$config['num_links'] = 1;
  	    $config['uri_segment'] = 4;
