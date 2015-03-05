@@ -18,7 +18,7 @@ class News extends CI_Controller {
 	{
 		$this->load->model('main_model');
 
-		$config['base_url'] = base_url().'index.php/admin/news/page/';
+		$config['base_url'] = base_url('index.php/admin/news/page/');
 		$config['total_rows'] = $this->db->count_all('news');
 		$config['per_page'] = 3; 
     	$config['use_page_numbers'] = TRUE;
@@ -98,7 +98,6 @@ class News extends CI_Controller {
 	{
 		$this->load->model('main_model');
 		$data['news'] = $this->main_model->getNewsById($id);	
-		// echo '<pre>'; print_r($data['news']);die;
 
 		$this->load->view('header_view');
 		$this->load->view('admin/edit_view',$data);
@@ -119,8 +118,6 @@ class News extends CI_Controller {
 		$this->do_upload();
 		$data['news'] = $this->main_model->updateNewsById($id,$data);
 		redirect('admin/news');
-		// echo $this->db->last_query();die;
-
 
 	}
 

@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('main_model');
 
-		$config['base_url'] = base_url().'index.php/frontend/home/page/';
+		$config['base_url'] = base_url('index.php/frontend/home/page/');
 		$config['total_rows'] = $this->db->count_all('news');
 		$config['per_page'] = 3; 
     	$config['use_page_numbers'] = TRUE;
@@ -30,7 +30,6 @@ class Home extends CI_Controller {
   	  		
 		$data['news'] = $this->main_model->page($config['per_page'],$offset);
 		$this->pagination->initialize($config); 
-
 
 		$this->load->view('header_view');
 		$this->load->view('frontend/home_view', $data);
