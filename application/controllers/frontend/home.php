@@ -38,6 +38,17 @@ class Home extends CI_Controller {
 
 	}
 
+	public function viewDetails($id)
+	{
+		$this->load->model('main_model');
+		$data['news'] = $this->main_model->getNewsById($id);
+
+		$this->load->view('header_view');
+		$this->load->view('frontend/details_view',$data);
+		$this->load->view('footer_view');
+
+	}
+
 }
 
 

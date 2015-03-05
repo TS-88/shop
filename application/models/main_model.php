@@ -44,4 +44,10 @@ class Main_model extends CI_Model {
 		$data = $this->db->get('news');
 		return $data->result_array();
 	}
+
+	// public function getDetailsById($id)
+	// {
+	// 	$query = $this->db->select('*')->where('id',$id)->get('news');
+	// 	return $query->result_array();
+	// }
 }
